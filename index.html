@@ -213,8 +213,8 @@ nav {
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 42px;
+    margin-bottom: 30px;
     font-weight: 800;
     letter-spacing: -1px;
     background: linear-gradient(135deg, #fff 0%, #EF4444 100%);
@@ -222,6 +222,7 @@ nav {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: textGlow 3s ease-in-out infinite;
+    line-height: 1.3;
 }
 
 @keyframes textGlow {
@@ -233,14 +234,21 @@ nav {
     }
 }
 
-.hero p {
-    font-size: 20px;
-    opacity: 0.95;
-    margin-bottom: 30px;
-    max-width: 600px;
+.hero-subtitle {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0.95;
     animation: fadeIn 1s ease-out 0.3s both;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-subtitle strong {
+    color: #EF4444;
+    font-weight: 700;
 }
 
 .cta-button {
@@ -711,11 +719,11 @@ footer p:hover {
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
-    .hero p {
-        font-size: 18px;
+    .hero-subtitle {
+        font-size: 16px;
     }
 
     section h2 {
@@ -770,11 +778,11 @@ footer p:hover {
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero-subtitle {
+        font-size: 14px;
     }
 
     section h2 {
@@ -819,8 +827,14 @@ footer p:hover {
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Professionelle Hausdienstleistungen</h1>
-            <p>Premium Service rund um Ihr Zuhause – von Betreuung über Reparaturen bis zur Reinigung</p>
+            <h1>Brauchen Sie Unterstützung im Haushalt oder im täglichen Leben?</h1>
+            <p class="hero-subtitle">
+                <strong>Wir sind für Sie da!</strong> 
+                Wir bieten umfassende Leistungen wie <strong>Betreuung und Unterstützung im Alltag</strong> an. 
+                Wir reinigen und gestalten Ihren Haushalt nach Ihren Wünschen. 
+                Sie können Ihre Wände nicht selbst streichen? <strong>Wir tun es für Sie!</strong> 
+                Darüber hinaus bieten wir viele weitere Dienstleistungen rund ums Haus an.
+            </p>
             <a href="#contact" class="cta-button">Jetzt Anfrage stellen →</a>
         </div>
     </section>
