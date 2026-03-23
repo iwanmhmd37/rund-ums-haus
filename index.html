@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rund ums Haus - Dienstleistungen in Leipzig</title>
-<meta name="description" content="Professionelle Hausdienstleistungen in Leipzig: Betreuung, Reparaturen, Reinigung und Gartenarbeiten.">
+<title>Rund ums Haus - Premium Hausdienstleistungen Leipzig</title>
+<meta name="description" content="Premium Hausdienstleistungen in Leipzig. Professionelle Betreuung, Reparaturen, Reinigung und Gartenarbeiten.">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <style>
 * {
@@ -13,28 +14,46 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7f6 0%, #e8eceb 100%);
-    color: #333;
-    line-height: 1.6;
+:root {
+    --primary: #22c55e;
+    --primary-dark: #16a34a;
+    --dark: #0f172a;
+    --dark-light: #1a2744;
+    --light: #f5f7f6;
+    --light-gray: #e8eceb;
+    --text: #1f2937;
+    --border-radius: 16px;
 }
 
-/* Header/Navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--light) 0%, var(--light-gray) 100%);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ============ HEADER ============ */
 header {
-    background: linear-gradient(135deg, #0f172a 0%, #1a2744 100%);
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
     color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(15, 23, 42, 0.95);
 }
 
 nav {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,316 +62,639 @@ nav {
 .logo-section {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-weight: bold;
-    font-size: 18px;
+    gap: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo-section:hover {
+    transform: scale(1.02);
 }
 
 .logo-section img {
-    height: 50px;
+    height: 55px;
     width: auto;
+    filter: drop-shadow(0 4px 8px rgba(34, 197, 94, 0.3));
+    transition: filter 0.3s ease;
+}
+
+.logo-section img:hover {
+    filter: drop-shadow(0 6px 16px rgba(34, 197, 94, 0.5));
+}
+
+.logo-text h1 {
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.logo-text p {
+    font-size: 12px;
+    opacity: 0.85;
+    margin: 2px 0 0 0;
 }
 
 .contact-header {
-    font-size: 13px;
+    font-size: 14px;
     opacity: 0.9;
+    font-weight: 500;
 }
 
-/* Container */
+/* ============ CONTAINER ============ */
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
-/* Hero Section */
+/* ============ HERO SECTION ============ */
 .hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1a2744 100%);
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
     color: white;
-    padding: 60px 20px;
+    padding: 100px 30px;
     text-align: center;
-    border-radius: 12px;
-    margin: 40px auto;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: var(--border-radius);
+    margin: 50px auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.8s ease-out;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(34, 197, 94, 0.05);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 36px;
-    margin-bottom: 15px;
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     opacity: 0.95;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Section Styling */
+.cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 45px rgba(34, 197, 94, 0.4);
+}
+
+/* ============ SECTIONS ============ */
 section {
-    margin: 40px auto;
+    margin: 70px auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 section h2 {
-    color: #0f172a;
-    font-size: 28px;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #22c55e;
+    color: var(--dark);
+    font-size: 36px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--primary);
     display: inline-block;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
-/* Service Boxes */
+/* ============ SERVICE CARDS ============ */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .service-card {
     background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-left: 5px solid #22c55e;
+    padding: 35px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(34, 197, 94, 0.15);
+    border-color: var(--primary);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
 }
 
 .service-card h3 {
-    color: #0f172a;
-    font-size: 18px;
-    margin-bottom: 15px;
+    color: var(--dark);
+    font-size: 20px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-weight: 700;
+}
+
+.service-card h3 span {
+    font-size: 28px;
 }
 
 .service-card ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 .service-card li {
-    padding: 8px 0;
-    padding-left: 20px;
+    padding: 10px 0;
+    padding-left: 28px;
     position: relative;
+    font-size: 15px;
+    color: #555;
+    transition: color 0.3s ease;
 }
 
-.service-card li:before {
+.service-card li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #22c55e;
+    color: var(--primary);
     font-weight: bold;
+    font-size: 18px;
 }
 
-/* Info Boxes */
-.info-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    margin: 20px 0;
+.service-card:hover li {
+    color: var(--dark);
 }
 
-.info-box p {
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* Pricing Section */
+/* ============ PRICING SECTION ============ */
 .pricing-highlight {
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
-    padding: 30px;
-    border-radius: 12px;
+    padding: 50px 40px;
+    border-radius: var(--border-radius);
     text-align: center;
-    margin: 20px 0;
+    margin: 30px 0;
+    box-shadow: 0 15px 50px rgba(34, 197, 94, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    filter: blur(60px);
 }
 
 .pricing-highlight p {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
 }
 
-/* Contact Section */
-.contact-section {
+.pricing-highlight p:first-of-type {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* ============ COMBINED SECTION ============ */
+.combined-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 40px;
     margin: 40px 0;
 }
 
-.contact-info {
+/* ============ JOKE CONTAINER ============ */
+.joke-container {
     background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-info h3 {
-    color: #0f172a;
-    margin-bottom: 20px;
+.joke-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.joke-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(34, 197, 94, 0.15);
+    border-color: var(--primary);
+}
+
+.joke-container h3 {
+    color: var(--dark);
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.joke-container > p {
+    color: #999;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+.joke-text {
     font-size: 18px;
-}
-
-.contact-item {
-    margin: 15px 0;
+    font-style: italic;
+    margin: 25px 0;
+    color: var(--dark);
+    min-height: 100px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 16px;
+    justify-content: center;
+    line-height: 1.8;
 }
 
-.contact-item a {
-    color: #22c55e;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact-item a:hover {
-    text-decoration: underline;
-}
-
-/* Form */
-.contact-form {
-    background: linear-gradient(135deg, #0f172a 0%, #1a2744 100%);
+.joke-button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: none;
+    padding: 13px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+    width: 100%;
+}
+
+.joke-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4);
+}
+
+.joke-button:active {
+    transform: translateY(0);
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(34, 197, 94, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============ CONTACT FORM ============ */
+.contact-form {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+    color: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .contact-form h3 {
     color: white;
-    margin-bottom: 20px;
-    font-size: 18px;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
+    color: rgba(255,255,255,0.95);
 }
 
 input, textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 8px;
-    font-family: 'Segoe UI', sans-serif;
-    background: rgba(255,255,255,0.1);
+    padding: 14px 16px;
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    background: rgba(255,255,255,0.08);
     color: white;
     font-size: 14px;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 input::placeholder, textarea::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.6);
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: #22c55e;
-    background: rgba(255,255,255,0.15);
+    border-color: var(--primary);
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
 
-button {
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+.submit-button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     border: none;
     padding: 14px 30px;
-    border-radius: 8px;
+    border-radius: 50px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 15px;
     width: 100%;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
 }
 
-button:hover {
+.submit-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4);
 }
 
-button:active {
-    transform: translateY(0);
+/* ============ CONTACT INFO ============ */
+.contact-info {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
 }
 
-/* Footer */
+.contact-info h3 {
+    color: var(--dark);
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.contact-item {
+    margin: 18px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+}
+
+.contact-item span {
+    font-size: 24px;
+    min-width: 30px;
+}
+
+.contact-item a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-dark);
+}
+
+/* ============ FOOTER ============ */
 footer {
-    background: #0f172a;
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
     color: white;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
+    padding: 50px 30px;
+    margin-top: 100px;
     font-size: 14px;
+    border-top: 2px solid rgba(34, 197, 94, 0.2);
 }
 
 footer p {
     margin: 10px 0;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
-/* Hinweis */
+footer p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* ============ HINWEIS ============ */
 .note {
-    background: #fef3c7;
-    border-left: 4px solid #f59e0b;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 20px 0;
+    background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+    border-left: 5px solid #f59e0b;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 30px 0;
     color: #92400e;
+    font-weight: 500;
 }
 
-/* Responsive */
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
     .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    section h2 {
         font-size: 28px;
     }
 
-    .contact-section {
+    .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .combined-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    nav {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo-section {
+        gap: 12px;
+    }
+
+    .logo-section img {
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    header {
+        padding: 12px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-header {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+        margin: 30px auto;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 16px;
     }
 
     section h2 {
         font-size: 24px;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 15px 0;
+    .service-card {
+        padding: 25px;
     }
 
-    .logo-section {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .hero {
-        padding: 40px 15px;
-    }
-
-    .hero h1 {
-        font-size: 24px;
-    }
-
-    .hero p {
-        font-size: 16px;
+    .joke-container,
+    .contact-form,
+    .contact-info {
+        padding: 25px;
     }
 }
 </style>
@@ -364,9 +706,9 @@ footer p {
     <nav class="container">
         <div class="logo-section">
             <img src="logo-ruh.png" alt="Rund ums Haus Logo">
-            <div>
-                <div>Rund ums Haus</div>
-                <div class="contact-header">Mohamad & Iwan – Leipzig</div>
+            <div class="logo-text">
+                <h1>Rund ums Haus</h1>
+                <p>Mohamad & Iwan</p>
             </div>
         </div>
         <div class="contact-header">
@@ -378,8 +720,11 @@ footer p {
 <div class="container">
 
     <section class="hero">
-        <h1>Professionelle Hausdienstleistungen</h1>
-        <p>Wir kümmern uns um alles rund ums Haus – von Betreuung über Reparaturen bis zur Reinigung</p>
+        <div class="hero-content">
+            <h1>Professionelle Hausdienstleistungen</h1>
+            <p>Premium Service rund um Ihr Zuhause – von Betreuung über Reparaturen bis zur Reinigung</p>
+            <a href="#contact" class="cta-button">Jetzt Anfrage stellen</a>
+        </div>
     </section>
 
     <section id="services">
@@ -387,7 +732,7 @@ footer p {
         
         <div class="services-grid">
             <div class="service-card">
-                <h3>👥 Betreuung</h3>
+                <h3><span>👥</span> Betreuung</h3>
                 <ul>
                     <li>Nachhilfe</li>
                     <li>Babysitting</li>
@@ -396,7 +741,7 @@ footer p {
             </div>
 
             <div class="service-card">
-                <h3>🔧 Reparaturen</h3>
+                <h3><span>🔧</span> Reparaturen</h3>
                 <ul>
                     <li>Kleine Reparaturen</li>
                     <li>Wände streichen</li>
@@ -408,7 +753,7 @@ footer p {
             </div>
 
             <div class="service-card">
-                <h3>🧹 Reinigung</h3>
+                <h3><span>🧹</span> Reinigung</h3>
                 <ul>
                     <li>Haushaltsreinigung</li>
                     <li>Autoreinigung (innen & außen)</li>
@@ -416,7 +761,7 @@ footer p {
             </div>
 
             <div class="service-card">
-                <h3>🌿 Garten & Außenbereich</h3>
+                <h3><span>🌿</span> Garten & Außenbereich</h3>
                 <ul>
                     <li>Rasen mähen</li>
                     <li>Blumen gießen</li>
@@ -426,73 +771,104 @@ footer p {
         </div>
 
         <div class="note">
-            <strong>Hinweis:</strong> Materialkosten werden extra berechnet.
+            <strong>💡 Hinweis:</strong> Materialkosten werden extra berechnet. Gerne erstellen wir Ihnen ein individuelles Angebot!
         </div>
     </section>
 
     <section id="pricing">
         <h2>💰 Preise</h2>
         <div class="pricing-highlight">
-            <p>Preise auf Anfrage und je nach Auftrag</p>
-            <p style="font-size: 14px; margin-top: 10px; opacity: 0.9;">Kontaktieren Sie uns für ein individuelles Angebot</p>
+            <p>Flexible Preise nach Auftrag</p>
+            <p style="font-size: 16px; margin-top: 12px; opacity: 0.95;">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
         </div>
     </section>
 
     <section id="contact">
-        <h2>📞 Kontakt & Anfrage</h2>
+        <h2>😂 Witz & 📞 Kontakt</h2>
         
-        <div class="contact-section">
-            <div class="contact-info">
-                <h3>Kontaktieren Sie uns</h3>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <a href="tel:+4917783886155">0177 8388615</a>
+        <div class="combined-section">
+            <!-- Joke Generator -->
+            <div class="joke-container">
+                <h3>Täglicher Witz</h3>
+                <p>Lachen ist die beste Medizin!</p>
+                <div class="joke-text" id="jokeText">
+                    <div class="loading"></div>
                 </div>
-                <div class="contact-item">
-                    <span>📧</span>
-                    <a href="mailto:r.u.haus37@gmail.com">r.u.haus37@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>Leipzig</span>
-                </div>
+                <button class="joke-button" onclick="fetchJoke()">🎲 Neuer Witz</button>
             </div>
 
-            <form class="contact-form" action="mailto:r.u.haus37@gmail.com" method="post" enctype="text/plain">
-                <h3>Anfrage senden</h3>
-                
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="Name" placeholder="Dein Name" required>
+            <!-- Contact Form -->
+            <div>
+                <div class="contact-info">
+                    <h3>Kontaktieren Sie uns</h3>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <a href="tel:+4917783886155">0177 8388615</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:r.u.haus37@gmail.com">r.u.haus37@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Leipzig</span>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">E-Mail *</label>
-                    <input type="email" id="email" name="Email" placeholder="Deine E-Mail" required>
-                </div>
+                <form class="contact-form" action="mailto:r.u.haus37@gmail.com" method="post" enctype="text/plain">
+                    <h3>Schnelle Anfrage</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Ihr Name *</label>
+                        <input type="text" id="name" name="Name" placeholder="Wie heißen Sie?" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="phone">Telefonnummer</label>
-                    <input type="tel" id="phone" name="Telefon" placeholder="Deine Telefonnummer">
-                </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="Email" placeholder="Ihre E-Mail" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Nachricht *</label>
-                    <textarea id="message" name="Nachricht" rows="5" placeholder="Beschreibe deine Anfrage..." required></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Telefonnummer</label>
+                        <input type="tel" id="phone" name="Telefon" placeholder="Ihre Telefonnummer">
+                    </div>
 
-                <button type="submit">Anfrage absenden</button>
-            </form>
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="Nachricht" rows="4" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">📨 Anfrage absenden</button>
+                </form>
+            </div>
         </div>
     </section>
 
 </div>
 
 <footer>
-    <p><strong>Rund ums Haus</strong></p>
+    <p>Rund ums Haus</p>
     <p>Mohamad & Iwan – Leipzig</p>
-    <p style="margin-top: 15px; font-size: 12px; opacity: 0.6;">© 2026 Rund ums Haus. Alle Rechte vorbehalten.</p>
+    <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">© 2026 Rund ums Haus. Alle Rechte vorbehalten.</p>
 </footer>
+
+<script>
+async function fetchJoke() {
+    const jokeText = document.getElementById('jokeText');
+    jokeText.innerHTML = '<div class="loading"></div>';
+    
+    try {
+        const response = await fetch('https://api.jokes.one/jokes/random');
+        const data = await response.json();
+        jokeText.textContent = data.joke.text;
+    } catch (error) {
+        jokeText.textContent = '😅 Oops! Witz konnte nicht geladen werden. Versuchen Sie es später erneut!';
+    }
+}
+
+// Witz beim Laden der Seite anzeigen
+window.addEventListener('load', fetchJoke);
+</script>
 
 </body>
 </html>
