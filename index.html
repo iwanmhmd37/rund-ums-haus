@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rund ums Haus</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7f6;
+    color: #222;
+}
+
+header {
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+header img {
+    height: 60px;
+}
+
+.container {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #0f172a;
+}
+
+h3 {
+    color: #0f172a;
+    margin-top: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+.contact {
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.contact h2 {
+    color: white;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: gray;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>
+        <img src="logo-ruh.png" alt="Rund ums Haus Logo">
+        Rund ums Haus
+    </h1>
+    <p>Mohamad & Iwan – Leipzig</p>
+</header>
+
+<div class="container">
+
+<div class="box">
+    <h2>Unsere Dienstleistungen</h2>
+
+    <h3>Betreuung</h3>
+    <ul>
+        <li>Nachhilfe</li>
+        <li>Babysitting</li>
+        <li>Haustierbetreuung</li>
+    </ul>
+
+    <h3>Reparaturen</h3>
+    <ul>
+        <li>Kleine Reparaturen</li>
+        <li>Wände streichen</li>
+        <li>Putz- und Spachtelarbeiten</li>
+        <li>Fahrräder</li>
+        <li>Reifenwechsel</li>
+        <li>Ölfilter & Autoservice</li>
+    </ul>
+
+    <h3>Reinigung</h3>
+    <ul>
+        <li>Haushaltsreinigung</li>
+        <li>Autoreinigung (innen & außen)</li>
+    </ul>
+
+    <h3>Garten & Außenbereich</h3>
+    <ul>
+        <li>Rasen mähen</li>
+        <li>Blumen gießen</li>
+        <li>Hausaußenarbeiten</li>
+    </ul>
+
+    <p><strong>Hinweis:</strong> Materialkosten werden extra berechnet.</p>
+</div>
+
+<div class="box">
+    <h2>Preise</h2>
+    <p>Preise auf Anfrage und je nach Auftrag.</p>
+</div>
+
+<div class="box">
+    <h2>Kontakt</h2>
+    <p>📞 0177 8388615</p>
+    <p>📧 r.u.haus37@gmail.com</p>
+</div>
+
+<div class="contact">
+    <h2>Anfrage senden</h2>
+
+    <form action="mailto:r.u.haus37@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Dein Name" required>
+        <input type="email" name="Email" placeholder="Deine E-Mail" required>
+        <input type="text" name="Telefon" placeholder="Telefonnummer">
+        <textarea name="Nachricht" rows="5" placeholder="Deine Anfrage..." required></textarea>
+        <button type="submit">Absenden</button>
+    </form>
+</div>
+
+</div>
+
+<footer>
+© 2026 Rund ums Haus – Leipzig
+</footer>
+
+</body>
+</html>
