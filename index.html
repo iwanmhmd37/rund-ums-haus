@@ -14,20 +14,19 @@
 }
 
 :root {
-    /* Professionelle Farbpalette */
-    --primary: #1e40af;           /* Deep Blue */
-    --primary-light: #3b82f6;     /* Bright Blue */
-    --primary-dark: #1e3a8a;      /* Dark Blue */
-    --accent: #0891b2;            /* Cyan */
-    --accent-light: #06b6d4;      /* Light Cyan */
-    --success: #059669;           /* Emerald Green */
-    --success-light: #10b981;     /* Light Green */
-    --dark: #0f172a;              /* Very Dark Blue */
-    --dark-light: #1a2744;        /* Dark Blue-Gray */
-    --light: #f8fafc;             /* Off White */
-    --light-gray: #e2e8f0;        /* Light Gray */
-    --text: #1e293b;              /* Dark Text */
-    --text-light: #475569;        /* Light Text */
+    --primary: #1e40af;
+    --primary-light: #3b82f6;
+    --primary-dark: #1e3a8a;
+    --accent: #0891b2;
+    --accent-light: #06b6d4;
+    --success: #059669;
+    --success-light: #10b981;
+    --dark: #0f172a;
+    --dark-light: #1a2744;
+    --light: #f8fafc;
+    --light-gray: #e2e8f0;
+    --text: #1e293b;
+    --text-light: #475569;
     --border-radius: 12px;
 }
 
@@ -37,7 +36,7 @@ html {
 
 body {
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(135deg, var(--light) 0%, #f1f5f9 100%);
+    background: #f3f6f9;
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
@@ -52,7 +51,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid #e5e7eb;
 }
 
 nav {
@@ -281,6 +280,14 @@ section h2 {
     letter-spacing: -0.7px;
 }
 
+#services {
+    background: #ffffff;
+    padding: 80px 30px;
+    border-radius: 20px;
+    margin: 80px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
 /* ============ SERVICE CARDS ============ */
 .services-grid {
     display: grid;
@@ -290,7 +297,7 @@ section h2 {
 }
 
 .service-card {
-    background: white;
+    background: linear-gradient(135deg, #f3f6f9 0%, #e8ecf1 100%);
     padding: 32px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08);
@@ -345,6 +352,7 @@ section h2 {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(30, 64, 175, 0.15);
     border-color: var(--primary);
+    background: #ffffff;
 }
 
 .service-card:hover::before {
@@ -405,6 +413,13 @@ section h2 {
 }
 
 /* ============ PRICING SECTION ============ */
+#pricing {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf1 100%);
+    padding: 80px 30px;
+    border-radius: 20px;
+    margin: 80px auto;
+}
+
 .pricing-highlight {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
@@ -456,6 +471,14 @@ section h2 {
 }
 
 /* ============ COMBINED SECTION ============ */
+#contact {
+    background: #ffffff;
+    padding: 80px 30px;
+    border-radius: 20px;
+    margin: 80px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
 .combined-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -465,12 +488,12 @@ section h2 {
 
 /* ============ CONTACT INFO ============ */
 .contact-info {
-    background: white;
+    background: linear-gradient(135deg, #f3f6f9 0%, #e8ecf1 100%);
     padding: 38px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08);
     animation: slideInLeft 0.8s ease-out;
-    border: 1px solid var(--light-gray);
+    border: 1px solid #e5e7eb;
 }
 
 @keyframes slideInLeft {
@@ -703,6 +726,14 @@ footer p:hover {
         padding: 0 20px;
     }
 
+    #services,
+    #contact,
+    #pricing {
+        border-radius: 0;
+        padding: 60px 20px;
+        margin: 60px auto;
+    }
+
     .logo-section {
         gap: 12px;
     }
@@ -762,6 +793,14 @@ footer p:hover {
         padding: 0 15px;
     }
 
+    #services,
+    #contact,
+    #pricing {
+        border-radius: 0;
+        padding: 50px 15px;
+        margin: 50px auto;
+    }
+
     .logo-img {
         height: 50px;
     }
@@ -819,7 +858,7 @@ footer p:hover {
             <img src="logo-ruh.png" alt="Rund ums Haus Logo" class="logo-img">
             <div class="logo-text">
                 <h1>Rund ums Haus</h1>
-                <p>Hamed & Iwan – Leipzig</p>
+                <p>Mohamad & Iwan – Leipzig</p>
             </div>
         </div>
         <div class="contact-header">
@@ -919,7 +958,7 @@ footer p:hover {
                     <span>📍</span>
                     <span>Leipzig, Deutschland</span>
                 </div>
-                <hr style="margin: 22px 0; border: none; border-top: 1px solid var(--light-gray);">
+                <hr style="margin: 22px 0; border: none; border-top: 1px solid #e5e7eb;">
                 <p style="margin-top: 14px;">Schnelle Antworten auf alle Ihre Fragen. Wir freuen uns auf Ihren Kontakt!</p>
             </div>
 
@@ -956,7 +995,7 @@ footer p:hover {
 
 <footer>
     <p>Rund ums Haus</p>
-    <p>Hamed & Iwan – Leipzig</p>
+    <p>Mohamad & Iwan – Leipzig</p>
     <p style="margin-top: 18px; font-size: 11px; opacity: 0.6;">© 2026 Rund ums Haus. Alle Rechte vorbehalten.</p>
 </footer>
 
